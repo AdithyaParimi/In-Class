@@ -28,5 +28,5 @@ PATCH http://localhost:3000/api/users/2
 Content-Type: application/json
 
 {
-  "lastName": "Putin III"
+  "lastName": "Parimi"
 }
