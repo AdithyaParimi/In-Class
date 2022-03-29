@@ -1,0 +1,17 @@
+http://localhost:3000
+
+###
+GET http://localhost:3000/api/users/
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "firstName": "Aditya",
+  "lastName": "Parimi",
+  "handle": "a_parimi",
+  "password": "aditya",
+  "email": "parimia@newpaltz.edu",
+  "pic": "https://randomuser.me/api/portraits/men/2.jpg"
+}
