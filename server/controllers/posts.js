@@ -1,5 +1,3 @@
-/* B"H
-*/
 const express = require('express');
 const app = express.Router();
 
@@ -35,5 +33,7 @@ app
         res.send({ success: true, errors: [], data: user });
 
     })
+
+
 
 module.exports = app;
