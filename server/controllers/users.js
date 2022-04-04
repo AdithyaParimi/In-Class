@@ -17,9 +17,11 @@ app
         res.send(user);
 
     })
-    .post('/', (req, res) => {
-        const user = userModel.create(req.body);
-        res.status(CREATED_STATUS).send(user);
+    .post('/', (req, res, next) => {
+        userModel.create(req.body)
+        .then(user => {
+            res.status(CREATED_STATUS).send(user);
+        }).catch(next);
     })
     .delete('/:id', (req, res) => {
 
@@ -28,11 +30,12 @@ app
         res.send({ success: true, errors: [], data: user });
 
     })
-    .patch('/:id', (req, res) => {
+    .patch('/:id', (req, res, next) => {
 
-        const user = userModel.update(req.params.id, req.body );
-
-        res.send({ success: true, errors: [], data: user });
+        userModel.update(req.params.id, req.body )
+        .then(user => {
+            res.send({ success: true, errors: [], data: user });
+        }).catch(next);
 
     })
 
